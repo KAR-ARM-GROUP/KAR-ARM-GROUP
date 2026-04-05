@@ -1,1 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAR ARM LOGISTICS GROUP | Global Supply Chain Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS VARIABLES (Black & Gold Palette) --- */
+        :root {
+            --primary-gold: #D4AF37; /* Classic Gold */
+            --light-gold: #F1D592;
+            --deep-black: #0A0A0A;
+            --soft-black: #1A1A1A;
+            --pure-white: #FFFFFF;
+            --gray-text: #A0A0A0;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --container-width: 1100px;
+        }
 
+        /* --- GLOBAL RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--deep-black);
+            color: var(--pure-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.2rem 5%;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-address {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-address span {
+            color: var(--primary-gold);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            background: var(--primary-gold);
+            filter: blur(150px);
+            opacity: 0.1;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-gold);
+            display: block;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 1.1rem;
+            color: var(--gray-text);
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--primary-gold);
+            color: var(--deep-black);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--light-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* --- ABOUT SECTION --- */
+        .section {
+            padding: 100px 5%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .section-tag {
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text {
+            color: var(--gray-text);
+            font-size: 1.05rem;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 2rem;
+        }
+
+        .stat-item h3 {
+            color: var(--primary-gold);
+            font-size: 2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        /* --- FEATURES SECTION --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: var(--soft-black);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border: 1px solid var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: var(--pure-white);
+        }
+
+        .feature-card p {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-area {
+            text-align: center;
+            background: var(--soft-black);
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-top: 50px;
+            border: 1px solid rgba(212, 175, 55, 0.05);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            color: var(--pure-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .contact-item span {
+            color: var(--primary-gold);
+            margin-right: 5px;
+        }
+
+        .contact-item:hover {
+            color: var(--primary-gold);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 50px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            color: var(--gray-text);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .nav-address { display: none; }
+            .about-content { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+            .section { padding: 60px 5%; }
+            .about-stats { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">KAR ARM</a>
+        <div class="nav-address">
+            <span>LOCATION:</span> 123 Global Trade Plaza, HQ
+        </div>
+    </nav>
+
+    <header class="hero">
+        <span class="section-tag">Established Excellence</span>
+        <h1>KAR ARM <span>LOGISTICS GROUP</span></h1>
+        <p>Providing seamless global supply chain solutions with precision, integrity, and world-class technology. Your bridge to the world.</p>
+        <a href="#contact" class="btn">Start Partnership</a>
+    </header>
+
+    <section class="section">
+        <div class="about-content">
+            <div>
+                <span class="section-tag">Who We Are</span>
+                <h2 class="section-title">The Standard in Modern Logistics</h2>
+                <p class="about-text">KAR ARM Logistics Group is more than a transport company. We are a strategic partner dedicated to optimizing your supply chain through innovative routing and real-time intelligence.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3>150+</h3>
+                        <p>Global Ports</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Active Support</p>
+                    </div>
+                </div>
+            </div>
+            <div style="border-left: 2px solid var(--primary-gold); padding-left: 40px;">
+                <p class="about-text" style="font-style: italic;">"We don't just move cargo; we move businesses forward by removing the boundaries of international trade."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <span class="section-tag" style="text-align: center; display: block;">Our Capabilities</span>
+        <h2 class="section-title" style="text-align: center;">Premium Solutions</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">01</div>
+                <h3>Air Freight</h3>
+                <p>Express global delivery for time-sensitive cargo via our network of premium air carriers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">02</div>
+                <h3>Ocean Cargo</h3>
+                <p>Cost-effective FCL and LCL shipping options across every major international trade route.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">03</div>
+                <h3>Warehousing</h3>
+                <p>State-of-the-art secure storage and inventory management with full digital tracking.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="contact-area">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Let's Discuss Your Project</h2>
+            <p style="color: var(--gray-text); max-width: 500px; margin: 0 auto 2rem;">Our logistics experts are ready to provide a custom quote for your specific business needs.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:contact@kararm.com" class="contact-item"><span>EMAIL:</span> solutions@kararm.com</a>
+                <a href="tel:+123456789" class="contact-item"><span>PHONE:</span> +1 (555) 012-3456</a>
+                <a href="#" class="contact-item"><span>LINKEDIN:</span> /kar-arm-logistics</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 KAR ARM LOGISTICS GROUP. ALL RIGHTS RESERVED.
+    </footer>
+
+</body>
+</html>
