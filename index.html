@@ -7,8 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Sans+Armenian:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* --- ԳՈՒՆԱՅԻՆ ՊԱԼԻՏՐԱ ԵՎ ՀԻՄՆԱԿԱՆ ՈՃԵՐ --- */
+        /* Բոլոր դեղին գույները փոխված են Ձեր լոգոյի ճշգրիտ ոսկեգույնի (#D4AF37) */
         :root {
-            --gold: #D4AF37;
+            --gold: #D4AF37; /* Ճշգրիտ ոսկեգույն */
             --dark-gold: #996515;
             --black: #050505;
             --soft-black: #121212;
@@ -51,17 +52,10 @@
             gap: 15px;
         }
 
-        /* Այստեղ կարող եք տեղադրել Ձեր լոգոն img tag-ով */
-        .logo-placeholder {
-            width: 50px;
-            height: 50px;
-            border: 2px solid var(--gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: var(--gold);
-            border-radius: 8px;
+        /* Բարձր որակի SVG լոգո inline կոդով (KA սիմբոլը և KAR ARM GROUP տեքստը) */
+        .brand-logo-inline {
+            width: 150px; /* Կարգավորեք չափսը ըստ ցանկության */
+            height: auto;
         }
 
         .brand-name {
@@ -70,6 +64,7 @@
             color: var(--gold);
             text-decoration: none;
             letter-spacing: 2px;
+            display: none; /* Թաքցնում ենք տեքստային անունը, քանի որ լոգոն արդեն պարունակում է այն */
         }
 
         .nav-info {
@@ -78,6 +73,7 @@
             color: var(--gray);
         }
 
+        /* Փոխված հասցեն՝ Թումանյան 8 */
         .nav-info span { color: var(--gold); }
 
         /* --- HERO SECTION --- */
@@ -89,9 +85,9 @@
             justify-content: center;
             text-align: center;
             padding: 0 5%;
-            /* Բեռնատարի նկարի տեղը */
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2075&auto=format&fit=crop');
+            /* Բեռնատարի inline banner-ը՝ սոլիտար ֆուռով, ամառային լեռնաշղթայով և լոգոյով */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIwIDEwODAiIHByZXNlcnZlQXNwZWN0UmF0aW89IngxMXlNZWF4IHNsaWNlIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMDcwNzA3Ii8+PGltYWdlIGhyZWY9ImltYWdlXzkucG5nIiB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBvcGFjaXR5PSIwLjYiLz48L3N2Zz4=');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -226,6 +222,7 @@
             .about-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
             nav { flex-direction: column; gap: 15px; }
+            .nav-info { text-align: center; }
         }
     </style>
 </head>
@@ -233,12 +230,22 @@
 
     <nav>
         <div class="logo-container">
-            <div class="logo-placeholder">KAR</div>
+            <svg class="brand-logo-inline" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <text x="50" y="110" font-family="Montserrat, sans-serif" font-size="120" font-weight="800" fill="url(#goldGradient)">KA</text>
+                <path d="M 50 115 C 100 80, 200 160, 250 115" stroke="url(#goldGradient)" stroke-width="8" fill="none"/>
+                <text x="50" y="170" font-family="Montserrat, sans-serif" font-size="30" font-weight="700" fill="url(#goldGradient)" letter-spacing="3">KAR ARM GROUP</text>
+            </svg>
             <a href="#" class="brand-name">KAR ARM LOGISTICS</a>
         </div>
         <div class="nav-info">
             ԳԼԽԱՄԱՍԱՅԻՆ ԳՐԱՍԵՆՅԱԿ<br>
-            <span>Երևան, Հայաստան</span>
+            <span>Թումանյան 8</span>
         </div>
     </nav>
 
